@@ -75,7 +75,7 @@ type PokemonSpecies = {
 type PokemonDetails = {
   abilities: PokemonAbilities[];
   base_experience: number;
-  forms: PokemonShort;
+  forms?: PokemonShort;
   game_indices: PokemonGameIndeces[];
   height: number;
   id: number;

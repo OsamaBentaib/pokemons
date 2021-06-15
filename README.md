@@ -1,4 +1,4 @@
-# Balloon Inc Assignment
+# Pokemons Assignment
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -8,7 +8,7 @@ Technologies that I am using in this assignment
  ` 
    - React Typescript
    - Style with SASS (SCSS)
-   - Fetching APIs with Urql
+   - Fetching APIs with fetch function
    - State managmant with Redux
    - Icons with react-icons library
    - Tests with Jest, Enzyme

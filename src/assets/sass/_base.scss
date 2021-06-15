@@ -41,7 +41,7 @@ table {
   width: 100%;
 }
 
-td, th {
+tr, td {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -71,11 +71,11 @@ td, th {
   margin: 0 0 12vh;
 }
 
-.grid__item:nth-child(odd) .product {
+.grid__item:nth-child(odd) .pokemon {
   margin-top: -8em;
 }
 
-.product {
+.pokemon {
   height: 100%;
   padding-top: 10em;
   position: relative;
@@ -83,13 +83,13 @@ td, th {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-.product__bg {
+.pokemon__bg {
   height: 16.5em;
   background: $details-bg-down;
   position: relative;
 }
 
-.product__img {
+.pokemon__img {
   max-height: 25em;
   margin: 0 auto;
   display: block;
@@ -100,36 +100,36 @@ td, th {
   transform: translate3d(-50%, 0, 0);
 }
 
-.product__title {
+.pokemon__title {
   position: relative;
   margin: 0.5em 0 0;
   font-size: 1.75em;
-  color: $color-product-title;
+  color: $color-pokemon-title;
   font-weight: 700;
 }
 
-.product__subtitle {
+.pokemon__subtitle {
   position: relative;
   margin: 0;
   text-transform: uppercase;
-  color: $color-product-subtitle;
+  color: $color-pokemon-subtitle;
   font-size: 0.85em;
   letter-spacing: 0.115em;
 }
 
-.product:hover .product__subtitle {
+.pokemon:hover .pokemon__subtitle {
   color: $color-link;
 }
 
-.product__description {
+.pokemon__description {
   opacity: 0;
 }
-.product__price {
+.pokemon__type {
   opacity: 1;
   position: absolute;
   font-size: 1.8em;
   margin-top: 1rem;
-  color: $color-price;
+  color: $color-type;
 }
 
 .details {
@@ -209,23 +209,23 @@ td, th {
   color: $color-descr;
 }
 
-.details__price {
+.details__type {
   font-size: 3em;
   font-weight: bold;
-  color: $color-price;
+  color: $color-type;
 }
 
-.details__addtocart {
+.details__backhome {
   border: 0;
   margin: auto 0 0 0;
-  background: $color-bg-addtocart;
-  color: $color-addtocart;
+  background: $color-bg-magnifier;
+  color: white;
   padding: 0.75em 2em;
   font-weight: bold;
 }
 
-.details__addtocart:hover,
-.details__addtocart.active {
+.details__backhome:hover,
+.details__backhome.active {
   background: $color-btn-hover;
 }
 
@@ -292,16 +292,16 @@ td, th {
   .grid__item {
     padding: 0 2vw;
   }
-  .product__bg {
+  .pokemon__bg {
     height: 10em;
   }
-  .product__img {
+  .pokemon__img {
     max-height: 19em;
   }
-  .product__title {
+  .pokemon__title {
     font-size: 1.25em;
   }
-  .product__subtitle {
+  .pokemon__subtitle {
     font-size: 0.75em;
   }
   .details {
@@ -317,7 +317,7 @@ td, th {
   .details__subtitle {
     font-size: 1em;
   }
-  .details__price {
+  .details__type {
     font-size: 1.5em;
   }
   .details__description {

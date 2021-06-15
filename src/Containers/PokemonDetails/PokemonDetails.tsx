@@ -110,7 +110,7 @@ export default function PokemonDetails() {
           Something went wrong, Please try again later
         </p>
         <button
-          className={`details__addtocart`}
+          className={`details__backhome`}
           onClick={() => onCloseDetails()}
         >
           Back to home
@@ -134,78 +134,82 @@ export default function PokemonDetails() {
           background: bg,
         }}
       ></div>
-       {!loading ? (
+      {!loading ? (
         <>
           <p className="details__description">
-        <span className="">
-          Abilities
-          <BsDot /> {pokemon.abilities.length}
-        </span>
-        {pokemon.moreDetails?.abilities?.map((e: PokeAbility, i: number) => (
-          <div key={i}>
-            <Span bg={bg}>{e.name}</Span>
-            <BsDot />
-            {e.effect_entries[0].effect}
-            <BsDot />
-            {e.flavor_text_entries[0].flavor_text}
-          </div>
-        ))}
-      </p>
+            <span className="">
+              Abilities
+              <BsDot /> {pokemon.abilities.length}
+            </span>
+            {pokemon.moreDetails?.abilities?.map(
+              (e: PokeAbility, i: number) => (
+                <div key={i}>
+                  <Span bg={bg}>{e.name}</Span>
+                  <BsDot />
+                  {e.effect_entries[0].effect}
+                  <BsDot />
+                  {e.flavor_text_entries[0].flavor_text}
+                </div>
+              )
+            )}
+          </p>
           <div className="">
             <table>
-              <tr>
-                <td>Charactiristic</td>
-                <td>
-                  {
-                    pokemon.moreDetails?.charactiristic?.descriptions[0]
-                      .description
-                  }
-                </td>
-                <td>Hieght</td>
-                <td>{pokemon.height}</td>
-              </tr>
-              <tr>
-                <td>Weight</td>
-                <td>{pokemon.weight}</td>
-                <td>Gender</td>
-                <td>{pokemon.moreDetails?.gender?.name}</td>
-              </tr>
-              <tr>
-                <td>Color</td>
-                <td>{pokemon.moreDetails?.species?.color.name}</td>
-                <td>Color</td>
-                <td>{pokemon.moreDetails?.species?.color.name}</td>
-              </tr>
-              <tr>
-                <td>Happiness</td>
-                <td>{pokemon.moreDetails?.species?.base_happiness}</td>
-                <td>Capture rate</td>
-                <td>{pokemon.moreDetails?.species?.capture_rate}</td>
-              </tr>
-              <tr>
-                <td>Form switchable</td>
-                <td>
-                  {pokemon.moreDetails?.species?.forms_switchable
-                    ? "Yes"
-                    : "No"}
-                </td>
-                <td>Shape</td>
-                <td>{pokemon.moreDetails?.species?.shape.name}</td>
-              </tr>
-              <tr>
-                <td>Growth rate</td>
-                <td>{pokemon.moreDetails?.species?.growth_rate.name}</td>
-                <td>Generation</td>
-                <td>{pokemon.moreDetails?.species?.generation.name}</td>
-              </tr>
+              <tbody>
+                <tr>
+                  <td>Charactiristic</td>
+                  <td>
+                    {
+                      pokemon.moreDetails?.charactiristic?.descriptions[0]
+                        .description
+                    }
+                  </td>
+                  <td>Hieght</td>
+                  <td>{pokemon.height}</td>
+                </tr>
+                <tr>
+                  <td>Weight</td>
+                  <td>{pokemon.weight}</td>
+                  <td>Gender</td>
+                  <td>{pokemon.moreDetails?.gender?.name}</td>
+                </tr>
+                <tr>
+                  <td>Color</td>
+                  <td>{pokemon.moreDetails?.species?.color.name}</td>
+                  <td>Color</td>
+                  <td>{pokemon.moreDetails?.species?.color.name}</td>
+                </tr>
+                <tr>
+                  <td>Happiness</td>
+                  <td>{pokemon.moreDetails?.species?.base_happiness}</td>
+                  <td>Capture rate</td>
+                  <td>{pokemon.moreDetails?.species?.capture_rate}</td>
+                </tr>
+                <tr>
+                  <td>Form switchable</td>
+                  <td>
+                    {pokemon.moreDetails?.species?.forms_switchable
+                      ? "Yes"
+                      : "No"}
+                  </td>
+                  <td>Shape</td>
+                  <td>{pokemon.moreDetails?.species?.shape.name}</td>
+                </tr>
+                <tr>
+                  <td>Growth rate</td>
+                  <td>{pokemon.moreDetails?.species?.growth_rate.name}</td>
+                  <td>Generation</td>
+                  <td>{pokemon.moreDetails?.species?.generation.name}</td>
+                </tr>
+              </tbody>
             </table>
           </div>
-          </>
-        ) : (
-          <div className="spinner">
-            <FiLoader />
-          </div>
-        )}
+        </>
+      ) : (
+        <div className="spinner">
+          <FiLoader />
+        </div>
+      )}
       <button className="details__close" onClick={() => onCloseDetails()}>
         <FiX />
       </button>

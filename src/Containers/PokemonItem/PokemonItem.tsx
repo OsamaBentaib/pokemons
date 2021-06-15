@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { OPEN_DETAILS } from "../../store/actionTypes";
 
 interface IProps {
@@ -9,6 +9,10 @@ export default function PokemonItem(props: IProps) {
   const {
     pokemon: { id, name, sprites, types },
   } = props;
+  // get the state
+  const initialState: InitialState | undefined = useSelector(
+    (initialState: InitialState) => initialState
+  );
   // dispatch the changes
   const dispatch = useDispatch<DispatchType>();
 
@@ -22,26 +26,28 @@ export default function PokemonItem(props: IProps) {
       payload: {
         pokemonDetails: {
           isDetailsOpen: true,
-          pokemon:props.pokemon,
-        }
+          pokemon: props.pokemon,
+        },
       },
     });
   };
   return (
     <div
-      className="grid__item"
+      className={`grid__item${
+        initialState.pokemonDetails.isDetailsOpen ? " isOpen" : ""
+      }`}
       id={id.toString()}
       onClick={() => onViewDetails()}
     >
-      <div className="product">
-        <div className="product__bg"></div>
+      <div className="pokemon">
+        <div className="pokemon__bg"></div>
         <img
-          className="product__img"
+          className="pokemon__img"
           src={sprites.other.dream_world.front_default}
           alt="...."
         />
-        <h2 className="product__title">{name}</h2>
-        <div className="product__price">{types[0].type.name}</div>
+        <h2 className="pokemon__title">{name}</h2>
+        <div className="pokemon__type">{types[0].type.name}</div>
       </div>
     </div>
   );

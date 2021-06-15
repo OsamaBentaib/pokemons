@@ -75,10 +75,10 @@ export default function PokemonContainer() {
         ))}
         <div ref={loader}>
           <div className="grid__item">
-            <div className="product">
-              <div className="product__bg">
+            <div className="pokemon">
+              <div className="pokemon__bg">
                 <div className="__emoji spinner">
-                  <FiLoader/>
+                  <FiLoader />
                 </div>
               </div>
             </div>
